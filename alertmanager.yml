@@ -1,0 +1,35 @@
+global:
+  resolve_timeout: 5m
+  timezone: Asia/Kolkata
+
+route:
+  receiver: "default-alerts"
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 4h
+
+  routes:
+  - matchers:
+    - severity="critical"
+    receiver: "critical-alerts"
+
+receivers:
+
+- name: "default-alerts"
+  email_configs:
+  - to: "umesh.dev@gmail.com"
+    from: "umesh.dev@gmail.com"
+    smarthost: "smtp.gmail.com:587"
+    auth_username: "umesh.dev@gmail.com"
+    auth_password: "abcd efgh ijkl mnop"
+    send_resolved: true
+
+
+- name: "critical-alerts"
+  email_configs:
+  - to: "boss@gmail.com"
+    from: "umesh.dev@gmail.com"
+    smarthost: "smtp.gmail.com:587"
+    auth_username: "umesh.dev@gmail.com"
+    auth_password: "abcd efgh ijkl mnop"
+    send_resolved: true
