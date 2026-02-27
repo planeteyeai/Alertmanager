@@ -17,19 +17,19 @@ receivers:
 
 - name: "default-alerts"
   email_configs:
-  - to: "umesh.dev@gmail.com"
-    from: "umesh.dev@gmail.com"
+  - to: "tushar.patil@mitconindia.com"
+    from: "planeteyefarm@gmail.com"
     smarthost: "smtp.gmail.com:587"
-    auth_username: "umesh.dev@gmail.com"
-    auth_password: "abcd efgh ijkl mnop"
+    auth_username: "planeteyefarm@gmail.com"
+    auth_password: "jusz ilta rilm tndt"
     send_resolved: true
 
 
 - name: "critical-alerts"
   email_configs:
-  - to: "boss@gmail.com"
-    from: "umesh.dev@gmail.com"
+  - to: "tushar.patil@mitconindia.com"
+    from: "planeteyefarm@gmail.com"
     smarthost: "smtp.gmail.com:587"
-    auth_username: "umesh.dev@gmail.com"
-    auth_password: "abcd efgh ijkl mnop"
+    auth_username: "planeteyefarm@gmail.com"
+    auth_password: "jusz ilta rilm tndt"
     send_resolved: true
