@@ -3,7 +3,7 @@ global:
   smtp_smarthost: "smtp.gmail.com:587"
   smtp_from: "planeteyefarm@gmail.com"
   smtp_auth_username: "planeteyefarm@gmail.com"
-  smtp_auth_password: "juszil tarlimtndt"   # NO SPACES
+  smtp_auth_password: "jusziltarlimtndt"   # NO SPACES
   smtp_require_tls: true
 
 route:
