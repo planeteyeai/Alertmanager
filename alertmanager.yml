@@ -19,22 +19,12 @@ route:
 
 receivers:
 
-- name: "default-alerts"
-  email_configs:
-    - to:
-        - "tushar.patil@mitconindia.com"
-        - "ram.thakur@planeteyeinfra.ai"
-        - "sahil.sonawane@planeteyefarm.ai"
-        - "snigdha.take@planeteyefarm.ai"
-        - "Kalyani.Pawar@planeteyefarm.ai"
-      send_resolved: true
+  - name: "default-alerts"
+    email_configs:
+      - to: "tushar.patil@mitconindia.com,ram.thakur@planeteyeinfra.ai,sahil.sonawane@planeteyefarm.ai,snigdha.take@planeteyefarm.ai,Kalyani.Pawar@planeteyefarm.ai"
+        send_resolved: true
 
-- name: "critical-alerts"
-  email_configs:
-    - to:
-        - "tushar.patil@mitconindia.com"
-        - "ram.thakur@planeteyeinfra.ai"
-        - "sahil.sonawane@planeteyefarm.ai"
-        - "snigdha.take@planeteyefarm.ai"
-        - "Kalyani.Pawar@planeteyefarm.ai"
-      send_resolved: true
+  - name: "critical-alerts"
+    email_configs:
+      - to: "tushar.patil@mitconindia.com,ram.thakur@planeteyeinfra.ai,sahil.sonawane@planeteyefarm.ai,snigdha.take@planeteyefarm.ai,Kalyani.Pawar@planeteyefarm.ai"
+        send_resolved: true
