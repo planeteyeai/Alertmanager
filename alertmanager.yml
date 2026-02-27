@@ -1,16 +1,11 @@
 global:
   resolve_timeout: 5m
-  smtp_smarthost: "smtp.sendgrid.net:25"
-  smtp_from: "planeteyefarm@gmail.com"
-  smtp_auth_username: "apikey"
-  smtp_auth_password: "${SMTP_PASSWORD}"
-  smtp_require_tls: true
 
 route:
   receiver: "default-alerts"
-  group_wait: 30s
-  group_interval: 5m
-  repeat_interval: 4h
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 30m
 
   routes:
     - matchers:
@@ -20,11 +15,11 @@ route:
 receivers:
 
   - name: "default-alerts"
-    email_configs:
-      - to: "Aniket.Shinde@planeteyefarm.ai"
+    webhook_configs:
+      - url: "https://emailwebhook-production-9d4c.up.railway.app/alert"
         send_resolved: true
 
   - name: "critical-alerts"
-    email_configs:
-      - to: "tushar.patil@mitconindia.com,ram.thakur@planeteyeinfra.ai,sahil.sonawane@planeteyefarm.ai,snigdha.take@planeteyefarm.ai,Kalyani.Pawar@planeteyefarm.ai"
+    webhook_configs:
+      - url: "https://emailwebhook-production-9d4c.up.railway.app/alert"
         send_resolved: true
