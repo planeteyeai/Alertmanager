@@ -1,5 +1,9 @@
 global:
   resolve_timeout: 5m
+  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_from: "planeteyefarm@gmail.com"
+  smtp_auth_username: "planeteyefarm@gmail.com"
+  smtp_auth_password: "juszil tarlimtndt"   # NO SPACES
   smtp_require_tls: true
 
 route:
@@ -7,26 +11,20 @@ route:
   group_wait: 30s
   group_interval: 5m
   repeat_interval: 4h
+
   routes:
     - matchers:
         - severity="critical"
       receiver: "critical-alerts"
 
 receivers:
-  - name: "default-alerts"
-    email_configs:
-      - to: "tushar.patil@mitconindia.com"
-        from: "planeteyefarm@gmail.com"
-        smarthost: "smtp.gmail.com:587"
-        auth_username: "planeteyefarm@gmail.com"
-        auth_password: "jusz ilta rilm tndt"
-        send_resolved: true
 
-  - name: "critical-alerts"
-    email_configs:
-      - to: "tushar.patil@mitconindia.com"
-        from: "planeteyefarm@gmail.com"
-        smarthost: "smtp.gmail.com:587"
-        auth_username: "planeteyefarm@gmail.com"
-        auth_password: "jusz ilta rilm tndt"
-        send_resolved: true
+- name: "default-alerts"
+  email_configs:
+  - to: "tushar.patil@mitconindia.com,ram.thakur@planeteyeinfra.ai,sahil.sonawane@planeteyefarm.ai,snigdha.take@planeteyefarm.ai,Kalyani.Pawar@planeteyefarm.ai"
+    send_resolved: true
+
+- name: "critical-alerts"
+  email_configs:
+  - to: "tushar.patil@mitconindia.com,ram.thakur@planeteyeinfra.ai,sahil.sonawane@planeteyefarm.ai,snigdha.take@planeteyefarm.ai,Kalyani.Pawar@planeteyefarm.ai"
+    send_resolved: true
