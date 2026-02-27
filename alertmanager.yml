@@ -1,9 +1,9 @@
 global:
   resolve_timeout: 5m
-  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_smarthost: "smtp.sendgrid.net:587"
   smtp_from: "planeteyefarm@gmail.com"
-  smtp_auth_username: "planeteyefarm@gmail.com"
-  smtp_auth_password: "jusziltarlimtndt"
+  smtp_auth_username: "apikey"
+  smtp_auth_password: "${SMTP_PASSWORD}"
   smtp_require_tls: true
 
 route:
@@ -21,7 +21,7 @@ receivers:
 
   - name: "default-alerts"
     email_configs:
-      - to: "tushar.patil@mitconindia.com,ram.thakur@planeteyeinfra.ai,sahil.sonawane@planeteyefarm.ai,snigdha.take@planeteyefarm.ai,Kalyani.Pawar@planeteyefarm.ai"
+      - to: "Aniket.Shinde@planeteyefarm.ai"
         send_resolved: true
 
   - name: "critical-alerts"
