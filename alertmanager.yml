@@ -18,8 +18,12 @@ receivers:
     webhook_configs:
       - url: "https://emailwebhook-production-9d4c.up.railway.app/alert"
         send_resolved: true
+      - url: "https://dummy-production-dcf6.up.railway.app/aqi/alerts"
+        send_resolved: true
 
   - name: "critical-alerts"
     webhook_configs:
       - url: "https://emailwebhook-production-9d4c.up.railway.app/alert/critical"
+        send_resolved: true
+      - url: "https://dummy-production-dcf6.up.railway.app/aqi/alerts"
         send_resolved: true
