@@ -6,24 +6,22 @@ route:
   group_wait: 30s
   group_interval: 10m
   repeat_interval: 12h
-
   routes:
     - matchers:
         - severity="critical"
       receiver: "critical-alerts"
 
 receivers:
-
   - name: "default-alerts"
     webhook_configs:
       - url: "https://emailwebhook-production-9d4c.up.railway.app/alert"
         send_resolved: true
-      - url: "https://dummy-production-dcf6.up.railway.app/aqi/alerts"
+      - url: "https://dummy-production-dcf6.up.railway.app/api/alerts"
         send_resolved: true
 
   - name: "critical-alerts"
     webhook_configs:
       - url: "https://emailwebhook-production-9d4c.up.railway.app/alert/critical"
         send_resolved: true
-      - url: "https://dummy-production-dcf6.up.railway.app/aqi/alerts"
+      - url: "https://dummy-production-dcf6.up.railway.app/api/alerts"
         send_resolved: true
